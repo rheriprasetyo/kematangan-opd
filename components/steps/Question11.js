@@ -1,9 +1,52 @@
+import { useState } from "react";
+import { supabase } from "@/supabase";
+import Link from "next/link";
+
 function Question11({ data, setData }) {
+  const [file, setFile] = useState(null);
+  const [url, setUrl] = useState(null);
+  const [error, setError] = useState(null);
+  const [hidden, setHidden] = useState(false);
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  url === null
+    ? (data.evidence11 = "-")
+    : (data.evidence11 = `https://pusjaotypxzrwwkvbqwk.supabase.co/storage/v1/object/public/upload-kematangan-opd/${url}`);
+  data.url = url;
+
+  const handleFileUpload = async () => {
+    try {
+      if (!file) {
+        throw new Error("Please select a file to upload.");
+      } else if (file.name.includes(" ")) {
+        setError("Nama file tidak boleh menggunakan spasi");
+        setTimeout(() => setError(null), 7000);
+        // return;
+      } else {
+        await supabase.storage
+          .from("upload-kematangan-opd")
+          .upload(file.name, file);
+      }
+
+      console.log("File uploaded successfully:", file.name);
+      setUrl(file.name);
+      setError(null);
+      setTimeout(() => setHidden(true), 5000);
+    } catch (error) {
+      console.error(error);
+      setUrl(null);
+      setError(error.message);
+    }
+  };
+
   return (
     <>
-      <div className="relative overflow-x-auto">
+      <div className="sm:w-9/12  relative over">
         <h1 class="text-2xl font-bold mb-8">
-          XI. BUDAYA ORGANISASI PERANGKAT DAERAH
+          X. PENGEMBANGAN INOVASI LAYANAN PERANGKAT DAERAH
         </h1>
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-white uppercase bg-gray-50 dark:bg-gray-700 ">
@@ -22,7 +65,8 @@ function Question11({ data, setData }) {
                 I
               </th>
               <td className="px-6 py-4">
-                Belum ada budaya organisasi pada perangkat daerah.
+                Belum ada rencana pengembangan produk yang akan dilakukan secara
+                sistematis.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -30,8 +74,8 @@ function Question11({ data, setData }) {
                 II
               </th>
               <td className="px-6 py-4">
-                Sudah ada slogan-slogan yang menggambarkan nilai organisasi pada
-                perangkat daerah yang bersangkutan.
+                Pengembangan produk dilakukan dengan mengadopsi inovasi yang
+                dikembangkan oleh daerah lain (replikasi inovasi)
               </td>
             </tr>
             <tr className="border-b-2">
@@ -39,9 +83,8 @@ function Question11({ data, setData }) {
                 III
               </th>
               <td className="px-6 py-4">
-                Sudah ada dokumen budaya organisasi yang resmi menggambarkan
-                nilai-nilai, sikap dan perilaku di perangkat daerah yang
-                bersangkutan.
+                Telah disusun rencana pengembangan inovasi baik jenis, mutu
+                maupun metodenya.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -49,8 +92,8 @@ function Question11({ data, setData }) {
                 IV
               </th>
               <td className="px-6 py-4">
-                Sudah ada program internalisasi budaya organisasi yang
-                berkelanjutan berdasarkan dokumen resmi.
+                Telah ada inovasi yang dikembangkan sendiri oleh perangkat
+                daerah yang bersangkutan.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -58,9 +101,8 @@ function Question11({ data, setData }) {
                 V
               </th>
               <td className="px-6 py-4">
-                Budaya organisasi sudah tercermin dalam sikap dan perilaku
-                pegawai pada perangkat daerah yang bersangkutan berdasarkan
-                hasil evaluasi secara rutin dan berkelanjutan.
+                Perangkat daerah sudah mempunyai program pengkajian dan inovasi
+                secara terencana dan berkelanjutan.
               </td>
             </tr>
           </tbody>
@@ -98,6 +140,39 @@ function Question11({ data, setData }) {
             </div>
           </form>
         </div>
+      </div>
+      <div className="w-max sm:w-9/12">
+        {/* <input id="file-input" type="file" onChange={handleFileChange} /> */}
+        <input
+          className="p-2 block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+          id="default_size"
+          type="file"
+          onChange={handleFileChange}
+        ></input>
+        <button
+          className="h-10 px-5 text-indigo-700"
+          onClick={handleFileUpload}
+        >
+          Upload File
+        </button>
+        {error && <p className="mt-4 font-bold text-red-700">{error}</p>}
+        {url && (
+          <div className={hidden ? "hidden" : " "}>
+            <div
+              className="mt-2 px-4 py-3 leading-normal text-green-700 bg-green-100 rounded-lg"
+              role="alert"
+            >
+              <p>File berhasil diupload.</p>
+
+              <Link
+                href={`https://pusjaotypxzrwwkvbqwk.supabase.co/storage/v1/object/public/upload-kematangan-opd/${url}`}
+                target="_blank"
+              >
+                {url}
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

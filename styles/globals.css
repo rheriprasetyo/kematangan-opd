@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.hide {
+  visibility: hidden;
+}
+
+.hidden {
+  visibility: visible;
+}
+
 .-z-1 {
   z-index: -1;
 }

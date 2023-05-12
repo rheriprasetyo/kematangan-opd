@@ -2,7 +2,7 @@ import { useState } from "react";
 import { supabase } from "@/supabase";
 import Link from "next/link";
 
-function Question3({ data, setData }) {
+function Question11({ data, setData }) {
   const [file, setFile] = useState(null);
   const [url, setUrl] = useState(null);
   const [error, setError] = useState(null);
@@ -13,8 +13,9 @@ function Question3({ data, setData }) {
   };
 
   url === null
-    ? (data.evidence3 = "-")
-    : (data.evidence3 = `https://pusjaotypxzrwwkvbqwk.supabase.co/storage/v1/object/public/upload-kematangan-opd/${url}`);
+    ? (data.evidence11 = "-")
+    : (data.evidence11 = `https://pusjaotypxzrwwkvbqwk.supabase.co/storage/v1/object/public/upload-kematangan-opd/${url}`);
+
   data.url = url;
 
   const handleFileUpload = async () => {
@@ -45,8 +46,8 @@ function Question3({ data, setData }) {
   return (
     <>
       <div className="sm:w-9/12  relative over">
-        <h1 className="text-2xl font-bold mb-8">
-          III. PENJAMINAN MUTU LAYANAN PERANGKAT DAERAH
+        <h1 class="text-2xl font-bold mb-8">
+          XI. BUDAYA ORGANISASI PERANGKAT DAERAH
         </h1>
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-white uppercase bg-gray-50 dark:bg-gray-700 ">
@@ -65,8 +66,7 @@ function Question3({ data, setData }) {
                 I
               </th>
               <td className="px-6 py-4">
-                Tidak ada penjaminan mutu atas produk yang dihasilkan dan atas
-                proses kerja yang dilakukan.
+                Belum ada budaya organisasi pada perangkat daerah.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -74,9 +74,8 @@ function Question3({ data, setData }) {
                 II
               </th>
               <td className="px-6 py-4">
-                Penjaminan mutu produk dan proses kerja dilakukan secara berkala
-                namun tidak mempunyai standar mutu produk dan proses yang
-                ditetapkan.
+                Sudah ada slogan-slogan yang menggambarkan nilai organisasi pada
+                perangkat daerah yang bersangkutan.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -84,8 +83,9 @@ function Question3({ data, setData }) {
                 III
               </th>
               <td className="px-6 py-4">
-                Mutu produk dan proses sudah distandarisasi dan dilakukan
-                pengujian secara berkala secara internal.
+                Sudah ada dokumen budaya organisasi yang resmi menggambarkan
+                nilai-nilai, sikap dan perilaku di perangkat daerah yang
+                bersangkutan.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -93,9 +93,8 @@ function Question3({ data, setData }) {
                 IV
               </th>
               <td className="px-6 py-4">
-                Penjaminan mutu produk dan proses sudah distandarisasi serta
-                dilakukan pengukuran/ pengujian secara berkala oleh tenaga yang
-                bersertifikat.
+                Sudah ada program internalisasi budaya organisasi yang
+                berkelanjutan berdasarkan dokumen resmi.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -103,9 +102,9 @@ function Question3({ data, setData }) {
                 V
               </th>
               <td className="px-6 py-4">
-                Penjaminan mutu produk dan proses dilakukan terstandarisasi dan
-                berkala oleh tenaga ahli bersertifikat serta didukung oleh
-                teknologi informasi berbasis internet.
+                Budaya organisasi sudah tercermin dalam sikap dan perilaku
+                pegawai pada perangkat daerah yang bersangkutan berdasarkan
+                hasil evaluasi secara rutin dan berkelanjutan.
               </td>
             </tr>
           </tbody>
@@ -115,9 +114,9 @@ function Question3({ data, setData }) {
             <div className="relative z-0 w-full mb-5">
               <select
                 name="select"
-                value={data.question3}
+                value={data.question11}
                 onChange={(event) =>
-                  setData({ ...data, question3: event.target.value })
+                  setData({ ...data, question11: event.target.value })
                 }
                 className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200"
               >
@@ -172,6 +171,7 @@ function Question3({ data, setData }) {
                 target="_blank"
               >
                 {url}
+                {console.log(data.evidence11)}
               </Link>
             </div>
           </div>
@@ -181,4 +181,4 @@ function Question3({ data, setData }) {
   );
 }
 
-export default Question3;
+export default Question11;

@@ -2,7 +2,7 @@ function DataDiri({ data, setData }) {
   return (
     <>
       {/* new form */}
-      <div className="text-start">
+      <div className="text-start w-80">
         <form id="form" noValidate>
           <div className="relative z-0 w-full mb-5">
             <input
