@@ -71,6 +71,7 @@ function DataDiri({ data, setData }) {
               <option value={"Dishub"}>Dishub</option>
               <option value={"Diskominfo"}>Diskominfo</option>
               <option value={"Dinas Perindustrian"}>Dinas Perindustrian</option>
+              <option value={"Dinas Perdagangan"}>Dinas Perdagangan</option>
               <option value={"DPMPTSP"}>DPMPTSP</option>
               <option value={"Dinas Ketapang"}>Dinas Ketapang</option>
               <option value={"Dispora"}>Dispora</option>
