@@ -23,8 +23,8 @@ function Question5({ data, setData }) {
         throw new Error("Please select a file to upload.");
       } else if (file.name.includes(" ")) {
         setError("Nama file tidak boleh menggunakan spasi");
-        setTimeout(() => setError(null), 7000);
-        // return;
+        setTimeout(() => setError(null), 5000);
+        return;
       } else {
         await supabase.storage
           .from("upload-kematangan-opd")
