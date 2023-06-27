@@ -46,7 +46,7 @@ function Question11({ data, setData }) {
     <>
       <div className="sm:w-9/12  relative over">
         <h1 class="text-2xl font-bold mb-8">
-          X. PENGEMBANGAN INOVASI LAYANAN PERANGKAT DAERAH
+          XI. BUDAYA ORGANISASI PERANGKAT DAERAH
         </h1>
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-white uppercase bg-gray-50 dark:bg-gray-700 ">
@@ -65,8 +65,7 @@ function Question11({ data, setData }) {
                 I
               </th>
               <td className="px-6 py-4">
-                Belum ada rencana pengembangan produk yang akan dilakukan secara
-                sistematis.
+                Belum ada budaya organisasi pada perangkat daerah.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -74,8 +73,8 @@ function Question11({ data, setData }) {
                 II
               </th>
               <td className="px-6 py-4">
-                Pengembangan produk dilakukan dengan mengadopsi inovasi yang
-                dikembangkan oleh daerah lain (replikasi inovasi)
+                Sudah ada slogan-slogan yang menggambarkan nilai organisasi pada
+                perangkat daerah yang bersangkutan.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -83,8 +82,9 @@ function Question11({ data, setData }) {
                 III
               </th>
               <td className="px-6 py-4">
-                Telah disusun rencana pengembangan inovasi baik jenis, mutu
-                maupun metodenya.
+                Sudah ada dokumen budaya organisasi yang resmi menggambarkan
+                nilai-nilai, sikap dan perilaku di perangkat daerah yang
+                bersangkutan.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -92,8 +92,8 @@ function Question11({ data, setData }) {
                 IV
               </th>
               <td className="px-6 py-4">
-                Telah ada inovasi yang dikembangkan sendiri oleh perangkat
-                daerah yang bersangkutan.
+                Sudah ada program internalisasi budaya organisasi yang
+                berkelanjutan berdasarkan dokumen resmi.
               </td>
             </tr>
             <tr className="border-b-2">
@@ -101,8 +101,9 @@ function Question11({ data, setData }) {
                 V
               </th>
               <td className="px-6 py-4">
-                Perangkat daerah sudah mempunyai program pengkajian dan inovasi
-                secara terencana dan berkelanjutan.
+                Budaya organisasi sudah tercermin dalam sikap dan perilaku
+                pegawai pada perangkat daerah yang bersangkutan berdasarkan
+                hasil evaluasi secara rutin dan berkelanjutan.
               </td>
             </tr>
           </tbody>
