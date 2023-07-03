@@ -64,7 +64,7 @@ function DataDiri({ data, setData }) {
               <option value={"Dinas Pendidikan"}>Dinas Pendidikan</option>
               <option value={"Dinas Kesehatan"}>Dinas Kesehatan</option>
               <option value={"Dinas PUPR"}>
-                Dinas Pekerjaan Umum dan Perumahan Rakyat
+                Dinas Pekerjaan Umum dan Penataan Ruang
               </option>
               <option value={"Dinas Perkim"}>
                 Dinas Perumahan dan Kawasan Permukiman
