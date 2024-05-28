@@ -180,7 +180,9 @@ function Form() {
           {FormTitles[page]}
         </p>
         {ConditionalComponent()}
+
         {/* controls for form */}
+
         <p className="mt-4 font-bold text-red-700">{error}</p>
         <div className="mt-5">
           <button

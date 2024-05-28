@@ -147,6 +147,10 @@ function Question7({ data, setData }) {
       </div>
       <div className="w-max sm:w-9/12">
         {/* <input id="file-input" type="file" onChange={handleFileChange} /> */}
+        <p className="text-left">
+          * Silahkan upload bukti dukung sesuai pilihan jawaban
+        </p>
+        <p className="text-left">* Nama file tidak boleh menggunakan spasi</p>
         <input
           className="p-2 block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
           id="default_size"
