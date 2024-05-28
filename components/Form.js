@@ -19,7 +19,7 @@ function Form() {
   const [page, setPage] = useState(0);
 
   const FormTitles = [
-    "Welcome",
+    "Selamat Datang",
     "Isi data Anda",
     "1/11",
     "2/11",
