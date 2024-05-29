@@ -10,16 +10,13 @@ function ConfirmPage({ data, setData }) {
           setData({ ...data, agreement: event.target.checked })
         }
       />
-      <label
-        htmlFor="link-checkbox"
-        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-      >
-        I agree with the{" "}
+      <label htmlFor="link-checkbox" className="ml-2 text-sm font-medium  ">
+        Jawaban dan data dukung sudah sesuai dengan{" "}
         <a
           href="#"
           className="text-blue-600 dark:text-blue-500 hover:underline"
         >
-          terms and conditions
+          keadaan yang sebenarnya
         </a>
         .
       </label>
